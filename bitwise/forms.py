@@ -1,8 +1,7 @@
 from django import forms
+from .models import Entry
 
-class NumberForm(forms.Form):
-  a = forms.IntegerField(min_value=0)
-  b = forms.IntegerField(min_value=0)
-  c = forms.IntegerField(min_value=0)
-  d = forms.IntegerField(min_value=0)
-  e = forms.IntegerField(min_value=0)
+class EntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ['a', 'b', 'c', 'd', 'e']
